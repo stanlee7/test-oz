@@ -1,0 +1,315 @@
+:root {
+    /* 모던한 컬러 팔레트 */
+    --primary-gradient: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+    --secondary-gradient: linear-gradient(135deg, #34D399 0%, #3B82F6 100%);
+    --background-white: #FFFFFF;
+    --background-light: #F3F4F6;
+    --text-dark: #1F2937;
+    --text-gray: #6B7280;
+    --accent-purple: #8B5CF6;
+    --accent-blue: #3B82F6;
+    --accent-green: #34D399;
+    
+    /* 글래스모피즘 효과 */
+    --glass-background: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    
+    /* 타이포그래피 */
+    --heading-large: 4.5rem;
+    --heading-medium: 2.5rem;
+    --heading-small: 1.5rem;
+    --text-regular: 1rem;
+    
+    /* 스페이싱 */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+    
+    /* 효과 */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --transition-fast: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* 기본 리셋 및 타이포그래피 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* 글래스모피즘 카드 */
+.glass-card {
+    background: var(--glass-background);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: var(--glass-shadow);
+}
+
+/* 헤더 네비게이션 */
+.nav-container {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    background: var(--glass-background);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+/* 히어로 섹션 */
+.hero-section {
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-gradient);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 4rem;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    background: linear-gradient(to right, #fff, #e2e2e2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 프로젝트 섹션 */
+.projects-section {
+    padding: 8rem 2rem;
+    background: var(--background-white);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.project-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-info {
+    transform: translateY(0);
+}
+
+.project-title {
+    font-size: var(--heading-small);
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+}
+
+.project-description {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* 스킬 섹션 */
+.skills-section {
+    padding: 8rem 2rem;
+    background: var(--secondary-gradient);
+    color: white;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    padding: 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* 버튼 스타일 */
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--primary-gradient);
+    color: white;
+    font-size: 1.1rem;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 애니메이션 */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .nav-container {
+        width: 90%;
+        padding: 0.8rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 로딩 애니메이션 */
+.loading-animation {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent-purple), var(--accent-blue));
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: loading 2s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* 다크 모드 지원 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-light: #1A1A1A;
+        --background-gray: #2D2D2D;
+        --text-primary: #FFFFFF;
+        --text-secondary: #A0A0A0;
+    }
+
+    .site-header {
+        background: rgba(26, 26, 26, 0.98);
+    }
+}
+
+/* 호버 효과 */
+.btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.btn:hover::after {
+    left: 100%;
+} 
